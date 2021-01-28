@@ -4,9 +4,33 @@
     </a>
 </p>
 
-<h1 align="center">Plugin Skeleton</h1>
+<h1 align="center">Modern Plugin Skeleton</h1>
 
-<p align="center">Skeleton for starting Sylius plugins.</p>
+<p align="center">Modern Skeleton for starting Sylius plugins.</p>
+
+## Warning
+
+This plugin DO NOT follow standard Sylius directory structure for plugins but a new "Symfony standard skeleton" one.
+
+New directory structure:
+
+```
+├── assets
+├── bin
+├── config
+├── docs
+├── etc
+├── features
+├── public
+├── src
+├── templates
+├── tests
+└── translations
+```
+
+Informations:
+- Related pull request on github (Symfony): https://github.com/symfony/symfony/pull/32845
+- Document for Symfony Bundle: https://github.com/yceruto/acme-bundle
 
 ## Documentation
 

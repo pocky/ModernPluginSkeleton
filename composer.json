@@ -1,8 +1,8 @@
 {
-    "name": "sylius/plugin-skeleton",
+    "name": "sylius/modern-plugin-skeleton",
     "type": "sylius-plugin",
     "keywords": ["sylius", "sylius-plugin"],
-    "description": "Acme example plugin for Sylius.",
+    "description": "Acme example plugin for modern Sylius.",
     "license": "MIT",
     "require": {
         "php": "^7.3",
@@ -41,12 +41,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Acme\\SyliusExamplePlugin\\": "src/",
-            "Tests\\Acme\\SyliusExamplePlugin\\": "tests/"
+            "Acme\\SyliusExamplePlugin\\": "src/"
         }
     },
     "autoload-dev": {
-        "classmap": ["tests/Application/Kernel.php"]
+        "classmap": ["tests/Application/Kernel.php"],
+        "psr-4": {
+            "Acme\\SyliusExamplePlugin\\Tests\\": "tests/"
+        }
     },
     "extra": {
         "branch-alias": {
