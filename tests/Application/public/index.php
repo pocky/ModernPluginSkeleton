@@ -1,6 +1,6 @@
 <?php
 
-use Acme\SyliusExamplePlugin\Tests\Application\Kernel;
+use Acme\Tests\SyliusExamplePlugin\Application\Kernel;
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\HttpFoundation\Request;
 
