@@ -1,8 +1,11 @@
 {
     "name": "sylius/modern-plugin-skeleton",
     "type": "sylius-plugin",
-    "keywords": ["sylius", "sylius-plugin"],
     "description": "Acme example plugin for modern Sylius.",
+    "keywords": [
+        "sylius",
+        "sylius-plugin"
+    ],
     "license": "MIT",
     "require": {
         "php": "^7.3",
@@ -41,6 +44,14 @@
         "symfony/web-profiler-bundle": "^4.4 || ^5.2",
         "vimeo/psalm": "4.4.1"
     },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.9-dev"
+        }
+    },
     "autoload": {
         "psr-4": {
             "Acme\\SyliusExamplePlugin\\": "src/"
@@ -51,14 +62,6 @@
         "psr-4": {
             "Acme\\Tests\\SyliusExamplePlugin\\": "tests/"
         }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.9-dev"
-        }
-    },
-    "config": {
-        "sort-packages": true
     },
     "scripts": {
         "post-install-cmd": [
