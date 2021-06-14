@@ -1,5 +1,5 @@
 {
-    "name": "sylius/modern-plugin-skeleton",
+    "name": "pocky/modern-plugin-skeleton",
     "type": "sylius-plugin",
     "description": "Acme example plugin for modern Sylius.",
     "keywords": [
