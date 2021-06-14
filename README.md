@@ -40,7 +40,7 @@ there you will find the <a href="https://docs.sylius.com/en/latest/plugin-develo
 
 ## Quickstart Installation
 
-1. Run `composer create-project sylius/plugin-skeleton ProjectName`.
+1. Run `composer create-project pocky/modern-plugin-skeleton ProjectName`.
 
 2. From the plugin skeleton root directory, run the following commands:
 
