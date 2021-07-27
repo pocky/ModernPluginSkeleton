@@ -1,5 +1,4 @@
 imports:
-    - vendor/sylius/sylius/src/Sylius/Behat/Resources/config/suites.yml
     - tests/Behat/Resources/suites.yml
 
 default:
@@ -53,3 +52,41 @@ default:
         FriendsOfBehat\SuiteSettingsExtension:
             paths:
                 - "features"
+
+docker:
+    extensions:
+        Behat\MinkExtension:
+            files_path: "%paths.base%/vendor/sylius/sylius/src/Sylius/Behat/Resources/fixtures/"
+            base_url: "http://php:8080/"
+            default_session: symfony
+            javascript_session: chrome_headless
+            sessions:
+                symfony:
+                    symfony: ~
+                chrome_headless:
+                    chrome:
+                        api_url: http://chrome:9222
+                        validate_certificate: false
+                chrome_docker:
+                    chrome:
+                        api_url: http://chrome:9222
+                        validate_certificate: false
+                chrome:
+                    selenium2:
+                        browser: chrome
+                        capabilities:
+                            browserName: chrome
+                            browser: chrome
+                            version: ""
+                            marionette: null # https://github.com/Behat/MinkExtension/pull/311
+                            chrome:
+                                switches:
+                                    - "start-fullscreen"
+                                    - "start-maximized"
+                                    - "no-sandbox"
+                            extra_capabilities:
+                                unexpectedAlertBehaviour: accept
+                firefox:
+                    selenium2:
+                        browser: firefox
+            show_auto: false
