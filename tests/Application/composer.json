@@ -1,5 +1,5 @@
 {
-    "name": "sylius/modern-plugin-skeleton-test-application",
+    "name": "pocky/modern-plugin-skeleton-test-application",
     "description": "Sylius application for modern plugin testing purposes (composer.json needed for project dir resolving)",
     "license": "MIT"
 }

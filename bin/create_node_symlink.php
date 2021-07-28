@@ -4,8 +4,7 @@ const NODE_MODULES_FOLDER_NAME = 'node_modules';
 const PATH_TO_NODE_MODULES = 'tests' . DIRECTORY_SEPARATOR . 'Application' . DIRECTORY_SEPARATOR . 'node_modules';
 
 /* cannot use `file_exists` or `stat` as gives false on symlinks if target path does not exist yet */
-if (@lstat(NODE_MODULES_FOLDER_NAME))
-{
+if (@lstat(NODE_MODULES_FOLDER_NAME)) {
     if (is_link(NODE_MODULES_FOLDER_NAME) || is_dir(NODE_MODULES_FOLDER_NAME)) {
         echo '> `' . NODE_MODULES_FOLDER_NAME . '` already exists as a link or folder, keeping existing as may be intentional.' . PHP_EOL;
         exit(0);
