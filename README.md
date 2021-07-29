@@ -10,7 +10,7 @@
 
 ## Warning
 
-This plugin DO NOT follow standard Sylius directory structure for plugins but a new "Symfony standard skeleton" one
+This plugin DOES NOT follow standard Sylius directory structure for plugins but a new "Symfony standard skeleton" one
 and services declaration in PHP (Symfony is actually leaving xml for PHP).
 
 New directory structure:
