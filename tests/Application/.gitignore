@@ -1,5 +1,4 @@
 /public/assets
-/public/build
 /public/css
 /public/js
 /public/media/*
@@ -7,7 +6,7 @@
 /public/media/image/*
 !/public/media/image/.gitignore
 
-/node_modules
+
 
 ###> symfony/framework-bundle ###
 /.env.*.local
@@ -21,3 +20,10 @@
 ###> symfony/web-server-bundle ###
 /.web-server-pid
 ###< symfony/web-server-bundle ###
+
+###> symfony/webpack-encore-bundle ###
+/public/build
+/node_modules
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
