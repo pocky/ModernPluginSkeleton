@@ -7,6 +7,7 @@
 
 install: start ## Install requirements for tests
 	sudo chmod -Rf 777 tests/Application/var
+	sudo chmod -Rf 777 tests/Application/public/media
 	docker-compose exec php php -d memory_limit=-1 /usr/bin/composer install
 	docker-compose exec nodejs yarn --cwd tests/Application install
 	docker-compose exec php tests/Application/bin/console doctrine:database:create --if-not-exists -vvv
@@ -26,6 +27,14 @@ stop: ## Stop and clean
 clean: stop ## Clean plugin
 	docker-compose down -v
 	sudo rm -Rf node_modules vendor .phpunit.result.cache composer.lock
+
+##
+## Assets
+##---------------------------------------------------------------------------
+.PHONY: encore
+
+encore:
+	docker-compose exec nodejs yarn --cwd tests/Application build
 
 ##
 ## QA
