@@ -33,12 +33,12 @@ services:
       - "3306:3306"
 
   nodejs:
-    image: node:10
+    image: node:12
     tty: true
     depends_on:
       - php
     environment:
-      - GULP_ENV=dev
+      - NODE_ENV=dev
       - PHP_HOST=php
       - PHP_PORT=9000
     working_dir: /srv/sylius

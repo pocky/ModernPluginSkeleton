@@ -1,0 +1,15 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+    <div {{ stimulus_controller('greeting', {
+        data: "greeting",
+        id: "greeting"
+    }) }}>
+           Loading...
+    </div>
+    <div class="homepage">
+        <div class="ui hidden divider"></div>
+
+        {{ sylius_template_event('sylius.shop.homepage') }}
+    </div>
+{% endblock %}

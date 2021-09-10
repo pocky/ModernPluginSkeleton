@@ -1,8 +1,8 @@
 <html>
     <head>
-        <script src="{{ asset('bundles/acmesyliusexampleplugin/greeting.js') }}"></script>
+        <script {{ encore_entry_script_tags('shop-entry', null, 'shop') }}></script>
     </head>
     <body>
-        <div id="greeting" data-greeting="{{ greeting }}">Loading...</div>
+    <div id="greeting" data-greeting="{{ greeting }}">Loading...</div>
     </body>
 </html>

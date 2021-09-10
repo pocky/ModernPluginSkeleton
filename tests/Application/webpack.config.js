@@ -15,7 +15,8 @@ const uiBundleResources = path.resolve(syliusBundles, 'UiBundle/Resources/privat
 Encore
   .setOutputPath('public/build/shop/')
   .setPublicPath('/build/shop')
-  .addEntry('shop-entry', './assets/shop/entry.js')
+  .addEntry('shop-entry', './assets/shop/app.js')
+  .enableStimulusBridge('./assets/shop/controllers.json')
   .disableSingleRuntimeChunk()
   .cleanupOutputBeforeBuild()
   .enableSourceMaps(!Encore.isProduction())
