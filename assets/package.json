@@ -1,0 +1,15 @@
+{
+  "name": "@pocky/modern-plugin-skeleton",
+  "version": "1.0.0",
+  "license": "MIT",
+  "symfony": {
+    "controllers": {
+      "greeting": {
+        "main": "src/controllers/greeting_controller.js",
+        "webpackMode": "eager",
+        "fetch": "eager",
+        "enabled": true
+      }
+    }
+  }
+}

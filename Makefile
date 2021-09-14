@@ -31,10 +31,13 @@ clean: stop ## Clean plugin
 ##
 ## Assets
 ##---------------------------------------------------------------------------
-.PHONY: encore
+.PHONY: assets assets-watch
 
-encore:
-	docker-compose exec nodejs yarn --cwd tests/Application build
+assets: ## Build assets for dev environment
+	docker-compose exec nodejs yarn --cwd tests/Application dev
+
+assets-watch: ## Watch asset during development
+	docker-compose exec nodejs yarn --cwd tests/Application watch
 
 ##
 ## QA

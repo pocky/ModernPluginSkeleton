@@ -8,13 +8,16 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "@symfony/webpack-encore": "^0.28.3",
+    "@pocky/modern-plugin-skeleton": "link:../../assets",
+    "@symfony/stimulus-bridge": "^2.0.0",
+    "@symfony/webpack-encore": "^1.1.2",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-import-resolver-babel-module": "^4.0.0",
     "eslint-plugin-import": "^2.11.0",
     "node-sass": "^4.5.3",
-    "sass-loader": "^7.3.1"
+    "sass-loader": "^11.0.0",
+    "stimulus": "^2.0.0"
   },
   "scripts": {
     "dev": "encore dev",

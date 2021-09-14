@@ -1,8 +1,10 @@
 <html>
     <head>
-        <script src="{{ asset('bundles/acmesyliusexampleplugin/greeting.js') }}"></script>
+        {{ encore_entry_script_tags('shop-entry', null, 'shop') }}
     </head>
     <body>
-        <div id="greeting" data-greeting="{{ greeting }}">Loading...</div>
+        <div id="greeting" {{ stimulus_controller('pocky/modern-plugin-skeleton/greeting', { data: greeting }) }}>
+            Loading...
+        </div>
     </body>
 </html>
