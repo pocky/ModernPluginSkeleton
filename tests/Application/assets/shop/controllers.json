@@ -1,4 +1,11 @@
 {
-  "controllers": [],
+  "controllers": {
+    "@pocky/modern-plugin-skeleton": {
+      "greeting": {
+        "enabled": true,
+        "fetch": "eager"
+      }
+    }
+  },
   "entrypoints": []
 }

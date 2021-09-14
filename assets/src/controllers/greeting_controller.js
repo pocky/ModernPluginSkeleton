@@ -1,12 +1,13 @@
 import { Controller } from 'stimulus';
+import Greeting from '../greeting';
 
 export default class extends Controller {
   static values = {
     data : String,
-    id : String
   }
 
   connect() {
-    setTimeout(this.innerHTML = this.dataValue,1000);
+    const greeting = new Greeting(this.element, this.dataValue);
+    greeting.show();
   }
 }
