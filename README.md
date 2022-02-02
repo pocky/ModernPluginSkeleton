@@ -40,7 +40,8 @@ Informations:
 2. From the plugin skeleton root directory, run the following commands:
 
 ```bash
-$ sudo chmod -Rf 777 tests/Application/var
+$ chmod -Rf 777 tests/Application/var
+$ docker-compose up -d
 $	docker-compose exec php php -d memory_limit=-1 /usr/bin/composer install
 $	docker-compose exec nodejs yarn --cwd tests/Application install
 $	docker-compose exec php tests/Application/bin/console doctrine:database:create --if-not-exists -vvv
