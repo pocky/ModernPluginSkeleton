@@ -35,7 +35,7 @@ Informations:
 
 ## Quickstart Installation (docker)
 
-1. Run `composer create-project pocky/modern-plugin-skeleton ProjectName` or clone this project
+1. Run `composer create-project pocky/modern-plugin-skeleton ProjectName dev-main` or clone this project
 
 2. From the plugin skeleton root directory, run the following commands:
 
