@@ -61,6 +61,11 @@ RUN set -eux; \
 	\
 	apk del .build-deps
 
+ENV MEMORY_LIMIT=-1
+RUN mv /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
+RUN echo "memory_limit = $MEMORY_LIMIT" >> /usr/local/etc/php/php.ini
+RUN echo "date.timezone = \"Europe/Paris\"" >> /usr/local/etc/php/php.ini
+
 EXPOSE 8080
 WORKDIR /srv/sylius
 

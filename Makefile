@@ -8,24 +8,24 @@
 install: start ## Install requirements for tests
 	sudo chmod -Rf 777 tests/Application/var
 	sudo chmod -Rf 777 tests/Application/public/media
-	docker-compose exec php php -d memory_limit=-1 /usr/bin/composer install
-	docker-compose exec nodejs yarn --cwd tests/Application install
-	docker-compose exec php tests/Application/bin/console doctrine:database:create --if-not-exists -vvv
-	docker-compose exec php tests/Application/bin/console doctrine:schema:create -vvv
-	docker-compose exec php tests/Application/bin/console assets:install tests/Application/public -vvv
-	docker-compose exec nodejs yarn --cwd tests/Application build
-	docker-compose exec php php -d memory_limit=-1 tests/Application/bin/console cache:warmup -vvv
-	docker-compose exec php tests/Application/bin/console sylius:fixtures:load -n
+	docker compose exec php /usr/bin/composer install
+	docker compose exec nodejs yarn --cwd tests/Application install
+	docker compose exec php tests/Application/bin/console doctrine:database:create --if-not-exists -vvv
+	docker compose exec php tests/Application/bin/console doctrine:schema:create -vvv
+	docker compose exec php tests/Application/bin/console assets:install tests/Application/public -vvv
+	docker compose exec nodejs yarn --cwd tests/Application build
+	docker compose exec php tests/Application/bin/console cache:warmup -vvv
+	docker compose exec php tests/Application/bin/console sylius:fixtures:load -n
 
 start: ## Start the project
-	docker-compose up -d
+	docker compose up -d
 
 stop: ## Stop and clean
-	docker-compose kill
-	docker-compose rm -v --force
+	docker compose kill
+	docker compose rm -v --force
 
 clean: stop ## Clean plugin
-	docker-compose down -v
+	docker compose down -v
 	sudo rm -Rf node_modules vendor .phpunit.result.cache composer.lock
 
 ##
@@ -34,10 +34,10 @@ clean: stop ## Clean plugin
 .PHONY: assets assets-watch
 
 assets: ## Build assets for dev environment
-	docker-compose exec nodejs yarn --cwd tests/Application dev
+	docker compose exec nodejs yarn --cwd tests/Application dev
 
 assets-watch: ## Watch asset during development
-	docker-compose exec nodejs yarn --cwd tests/Application watch
+	docker compose exec nodejs yarn --cwd tests/Application watch
 
 ##
 ## QA
@@ -45,22 +45,22 @@ assets-watch: ## Watch asset during development
 .PHONY: validate phpstan psalm phpspec phpunit behat
 
 validate: ## Validate composer.json
-	docker-compose exec php composer validate --ansi --strict
+	docker compose exec php composer validate --ansi --strict
 
 phpstan: ## phpstan level max
-	docker-compose exec php vendor/bin/phpstan analyse -c phpstan.neon -l max src/
+	docker compose exec php vendor/bin/phpstan analyse -c phpstan.neon -l max src/
 
 psalm: ## psalm
-	docker-compose exec php vendor/bin/psalm
+	docker compose exec php vendor/bin/psalm
 
 phpspec: ## phpspec
-	docker-compose exec php vendor/bin/phpspec run --ansi -f progress --no-interaction
+	docker compose exec php vendor/bin/phpspec run --ansi -f progress --no-interaction
 
 phpunit: ## phpunit
-	docker-compose exec php vendor/bin/phpunit --colors=always
+	docker compose exec php vendor/bin/phpunit --colors=always
 
 behat: ## Run behat
-	docker-compose exec php vendor/bin/behat --profile docker --colors --strict -vvv --no-interaction
+	docker compose exec php vendor/bin/behat --profile docker --colors --strict -vvv --no-interaction
 
 ci: validate phpstan psalm phpspec phpunit behat ## Execute github actions tasks
 
