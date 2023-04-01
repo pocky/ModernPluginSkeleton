@@ -2,7 +2,7 @@ FROM php:7.4-fpm-alpine
 
 # Install composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
-COPY --from=symfonycorp/cli /symfony /usr/bin/symfony
+COPY --from=ghcr.io/symfony-cli/symfony-cli:v5 /usr/local/bin/symfony /usr/bin/symfony
 
 # Install make
 RUN apk add --no-cache make
