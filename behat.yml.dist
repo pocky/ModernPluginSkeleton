@@ -46,6 +46,7 @@ default:
             bootstrap: tests/Application/config/bootstrap.php
             kernel:
                 class: Acme\Tests\SyliusExamplePlugin\Application\Kernel
+                environment: test
 
         FriendsOfBehat\VariadicExtension: ~
 

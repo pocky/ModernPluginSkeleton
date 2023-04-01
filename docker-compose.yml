@@ -8,7 +8,7 @@ services:
       - .:/srv/sylius:rw
     environment:
       - COMPOSER_HOME=/tmp/composer
-      - APP_ENV=test
+      - APP_ENV=dev
       - APP_SECRET=EDITME
       - DATABASE_URL=mysql://sylius:nopassword@mysql/sylius
       - MAILER_URL=smtp://mailhog:1025
@@ -19,7 +19,7 @@ services:
         - "8080:8080"
 
   mysql:
-    image: percona:5.7
+    image: mysql:8.0
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-nopassword}
       - MYSQL_DATABASE=sylius
@@ -33,7 +33,7 @@ services:
       - "3306:3306"
 
   nodejs:
-    image: node:12
+    image: node:18
     tty: true
     depends_on:
       - php
@@ -60,5 +60,23 @@ services:
     ports:
       - "9222:9222"
 
+###> doctrine/doctrine-bundle ###
+  database:
+    image: postgres:${POSTGRES_VERSION:-15}-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-app}
+      # You should definitely change the password in production
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
+      POSTGRES_USER: ${POSTGRES_USER:-app}
+    volumes:
+      - database_data:/var/lib/postgresql/data:rw
+      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
+      # - ./docker/db/data:/var/lib/postgresql/data:rw
+###< doctrine/doctrine-bundle ###
+
 volumes:
   mysql-data:
+
+###> doctrine/doctrine-bundle ###
+  database_data:
+###< doctrine/doctrine-bundle ###

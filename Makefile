@@ -34,7 +34,7 @@ clean: stop ## Clean plugin
 .PHONY: assets assets-watch
 
 assets: ## Build assets for dev environment
-	docker compose exec nodejs yarn --cwd tests/Application dev
+	docker compose exec nodejs yarn --cwd tests/Application build
 
 assets-watch: ## Watch asset during development
 	docker compose exec nodejs yarn --cwd tests/Application watch

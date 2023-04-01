@@ -1,8 +1,13 @@
 parameters:
+    level: max
     reportUnmatchedIgnoredErrors: false
     checkMissingIterableValueType: false
 
-    excludes_analyse:
+    paths:
+        - src
+        - tests/Behat
+
+    excludePaths:
         # Makes PHPStan crash
         - 'src/DependencyInjection/Configuration.php'
 
