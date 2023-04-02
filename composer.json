@@ -40,7 +40,7 @@
     "sylius/sylius-rector": "0.11.x-dev",
     "symfony/browser-kit": "^5.4 || ^6.0",
     "symfony/debug-bundle": "^5.4 || ^6.0",
-    "symfony/dotenv": "^6.2",
+    "symfony/dotenv": "^5.4 || ^6.0",
     "symfony/flex": "^2.2.2",
     "symfony/intl": "^5.4 || ^6.0",
     "symfony/web-profiler-bundle": "^5.4 || ^6.0",
@@ -52,7 +52,7 @@
     },
     "sort-packages": true,
     "allow-plugins": {
-      "symfony/flex": true,
+      "symfony/flex": false,
       "symfony/thanks": true,
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "phpstan/extension-installer": true,

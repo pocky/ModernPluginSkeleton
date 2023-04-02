@@ -16,11 +16,10 @@
         <server name="KERNEL_CLASS_PATH" value="/tests/Application/AppKernel.php" />
         <server name="IS_DOCTRINE_ORM_SUPPORTED" value="true" />
 
-        <env name="APP_ENV" value="test"/>
         <env name="SHELL_VERBOSITY" value="-1" />
 
         <!-- ###+ symfony/framework-bundle ### -->
-        <env name="APP_ENV" value="dev"/>
+        <env name="APP_ENV" value="test"/>
         <env name="APP_SECRET" value="bd76866d71aeb0e550a60461ccdeb00f"/>
         <!-- ###- symfony/framework-bundle ### -->
     </php>

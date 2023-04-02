@@ -26,7 +26,7 @@ stop: ## Stop and clean
 
 clean: stop ## Clean plugin
 	docker compose down -v
-	sudo rm -Rf node_modules vendor .phpunit.result.cache composer.lock
+	sudo rm -Rf node_modules tests/Application/node_modules vendor .phpunit.result.cache composer.lock symfony.lock
 
 ##
 ## Assets
