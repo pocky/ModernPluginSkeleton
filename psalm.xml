@@ -9,6 +9,7 @@
         <directory name="src" />
         <ignoreFiles>
             <directory name="vendor" />
+            <file name="src/AcmeSyliusExamplePlugin.php" />
         </ignoreFiles>
     </projectFiles>
 </psalm>
