@@ -72,7 +72,8 @@
   "autoload-dev": {
     "classmap": ["tests/Application/Kernel.php"],
     "psr-4": {
-      "Acme\\SyliusExamplePlugin\\Tests\\": "tests/"
+      "Acme\\SyliusExamplePlugin\\Tests\\": "tests/",
+      "Acme\\SyliusExamplePlugin\\Tests\\Application\\": "tests/Application/src/"
     }
   },
   "scripts": {
