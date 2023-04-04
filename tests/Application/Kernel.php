@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Acme\Tests\SyliusExamplePlugin\Application;
+namespace Acme\SyliusExamplePlugin\Tests\Application;
 
 use PSS\SymfonyMockerContainer\DependencyInjection\MockerContainer;
 use Sylius\Bundle\CoreBundle\Application\Kernel as SyliusKernel;
