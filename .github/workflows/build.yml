@@ -106,7 +106,7 @@ jobs:
 
             -
                 name: Install PHP dependencies
-                run: composer install --no-interaction
+                run: composer install --no-interaction --no-plugins
 
             -
                 name: Get Yarn cache directory
